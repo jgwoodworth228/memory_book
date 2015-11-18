@@ -14,19 +14,19 @@ user_info = [
     :first_name => "Jan",
     :last_name => "Smith",
     :email => "jan.smith@aoltest.com",
-    # :password => "12341234,
+    :password => "12341234"
   },
   {
-    :first_name => "Teddy",
-    :last_name => "Bear",
-    :email => "teddybear@aoltest.com",
-    # :password => "12341234,
+    :first_name => "Jim",
+    :last_name => "Woodworth",
+    :email => "jgwoodworth@gmail.com",
+    :password => "jimmer13"
   },
   {
     :first_name => "Tom",
     :last_name => "Woodworth",
     :email => "tbw1313@aoltest.com",
-    # :password => "12341234,
+    :password => "12341234"
   }
 ]
 
@@ -37,7 +37,7 @@ user_info.each do |user_hash|
   f.first_name = user_hash[:first_name]
   f.last_name = user_hash[:last_name]
   f.email = user_hash[:email]
-  # f.password = user_hash[:password]
+  f.password = user_hash[:password]
   f.save
 end
 
@@ -67,7 +67,7 @@ book_info.each do |book_hash|
   random_user = User.offset(random_num).first
 
   f = Book.new
-  f.user_id = random_user
+  f.user_id = random_user.id
   f.book_title = book_hash[:book_title]
   f.title_page_image_url = book_hash[:title_page_image_url]
   f.save

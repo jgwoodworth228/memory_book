@@ -1,19 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @book.user_id %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @book.user_id %>
+  </p>
 
-<p>
-  <strong>Book title:</strong>
-  <%= @book.book_title %>
-</p>
+  <p>
+    <strong>Book title:</strong>
+    <%= @book.book_title %>
+  </p>
 
-<p>
-  <strong>Title page image url:</strong>
-  <%= @book.title_page_image_url %>
-</p>
+  <p>
+    <strong>Title page image url:</strong>
+    <%= @book.title_page_image_url %>
+  </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+  <%= link_to 'Edit', edit_book_path(@book) %> |
+  <%= link_to 'Back', books_path %>
+
+  <hr>
+  <br>
+  <% @page.each do |page_item| %>
+    <% if current_user.id == page_item.user_id %>
+      <h3>Page Item #<%= page_item.id %></h3>
+
+      <br>
+
+      <dl>
+        <dt>User</dt>
+        <dd><%= page_item.user_id %></dd>
+
+        <dt>Book</dt>
+        <dd><%= page_item.book_id %></dd>
+
+        <dt>Image URL</dt>
+        <dd><%= page_item.page_image_url%></dd>
+
+        <dt>Image Caption</dt>
+        <dd><%= page_item.page_image_caption %></dd>
+
+        <dt>Page Bullet 01</dt>
+        <dd><%= page_item.page_bullet_01%></dd>
+
+        <dt>Page Bullet 02</dt>
+        <dd><%= page_item.page_bullet_02%></dd>
+      </dl>
+      <br>
+      <br>
+    <% end %>
+  <% end %>
+</div>
+
