@@ -1,7 +1,8 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <p>
+<!-- Commented out by Jim -->
+  <!-- <p>
     <strong>User:</strong>
     <%= @book.user_id %>
   </p>
@@ -16,39 +17,23 @@
     <%= @book.title_page_image_url %>
   </p>
 
-  <%= link_to 'Edit', edit_book_path(@book) %> |
-  <%= link_to 'Back', books_path %>
+  <%#= link_to #'Edit', #edit_book_path(@book) %> |
+  <%#= link_to #'Back', #books_path %>
 
-  <hr>
-  <br>
-  <% @page.each do |page_item| %>
-    <% if current_user.id == page_item.user_id %>
-      <h3>Page Item #<%= page_item.id %></h3>
-
-      <br>
-
-      <dl>
-        <dt>User</dt>
-        <dd><%= page_item.user_id %></dd>
-
-        <dt>Book</dt>
-        <dd><%= page_item.book_id %></dd>
-
-        <dt>Image URL</dt>
-        <dd><%= page_item.page_image_url%></dd>
-
-        <dt>Image Caption</dt>
-        <dd><%= page_item.page_image_caption %></dd>
-
-        <dt>Page Bullet 01</dt>
-        <dd><%= page_item.page_bullet_01%></dd>
-
-        <dt>Page Bullet 02</dt>
-        <dd><%= page_item.page_bullet_02%></dd>
-      </dl>
-      <br>
-      <br>
-    <% end %>
-  <% end %>
-</div>
+  <hr> -->
+ <% @page.each do |page_item| %>
+<!-- jumbotron of image/slide -->
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="image-responsive">
+            <img src="<%= page_item.page_image_url %>" alt="<%= page_item.page_image_caption %>">
+          </div>
+          <p></p>
+          <p> + <%= page_item.page_bullet_01 %></p>
+          <p> + <%= page_item.page_bullet_02 %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
 

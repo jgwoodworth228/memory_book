@@ -1,0 +1,13 @@
+       <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+
+            <div class="caption">
+              <h3><%= book.book_title %></h3>
+                <img src="<%= book.title_page_image_url %>" alt="<%= book.book_title %>">
+                <p></p>
+                <%= link_to 'Click to See Pages', book,  :class => "btn btn-primary" %>
+              <p></p>
+              <p><%= link_to 'Show', book %> | <%= link_to 'Edit', edit_book_path(book) %> | <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>  </p>
+            </div>
+           </div>
+          </div>
