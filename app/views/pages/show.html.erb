@@ -1,34 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @page.user_id %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @page.user_id %>
+  </p>
 
-<p>
-  <strong>Book:</strong>
-  <%= @page.book_id %>
-</p>
+  <p>
+    <strong>Book:</strong>
+    <%= @page.book_id %>
+  </p>
 
-<p>
-  <strong>Page image url:</strong>
-  <%= @page.page_image_url %>
-</p>
+  <p>
+    <strong>Page image url:</strong>
+    <%= @page.page_image_url %>
+  </p>
 
-<p>
-  <strong>Page image caption:</strong>
-  <%= @page.page_image_caption %>
-</p>
+  <p>
+    <strong>Page image caption:</strong>
+    <%= @page.page_image_caption %>
+  </p>
 
-<p>
-  <strong>Page bullet 01:</strong>
-  <%= @page.page_bullet_01 %>
-</p>
+  <p>
+    <strong>Page bullet 01:</strong>
+    <%= @page.page_bullet_01 %>
+  </p>
 
-<p>
-  <strong>Page bullet 02:</strong>
-  <%= @page.page_bullet_02 %>
-</p>
+  <p>
+    <strong>Page bullet 02:</strong>
+    <%= @page.page_bullet_02 %>
+  </p>
 
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+  <%= link_to 'Edit', edit_page_path(@page) %> |
+  <%= link_to 'Back', pages_path %>
+</div>
