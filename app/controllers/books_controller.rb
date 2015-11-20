@@ -11,6 +11,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @page = Page.where(:book_id => params[:id])
+
   end
 
   # GET /books/new
